@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payroll</title>
+    <link rel="stylesheet" href="../Resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="../Resources/css/Profile-Edit-Form.css">
+    <link rel="stylesheet" href="../Resources/css/Profile-Edit-Form.css">
+    <!--<link rel="stylesheet" href="../Resources/css/styles.css">-->
+</head>
+
+<body style="font-family:Roboto, sans-serif;">
+    <div class="container" style="margin-top:90px;">
+        <h4>Payroll Generation</h4>
+        <h6>Payroll Zone &gt;&nbsp;Payroll Generation<br></h6>
+    </div>
+    <!--<div class="container d-flex justify-content-end" style="margin-top:30px;">
+        <div class="row">
+            <div class="col-7 col-md-2"><label class="col-form-label" style="font-weight:bold;margin-top:-7px;margin-left:-5px;">Date:&nbsp;</label></div>
+            <div class="col-md-9">
+                <p id="currentDate"></p>
+            </div>
+        </div>
+    </div>-->
+    <div class="container" style="margin-top:20px;">
+        <div class="row">
+            <div class="col-sm-12 col-md-6" style="border-radius:10px;margin-right:25px;border:outset;background-color: white;">
+                <div style="margin-top:10px;">
+                    <h5>Employee Information<br></h5>
+                    <hr>
+                </div>
+                <div class="form-group" style="margin-top:7px;"><label name="empID">Employee ID</label><select class="form-control"><option value="12" selected="">ID 1</option><option value="13">ID 2</option><option value="14">ID 3</option></select></div>
+                <div class="row">
+                    <div class="col">
+                        <div class="avatar">
+                            <div class="d-flex justify-content-center align-items-center avatar-bg center" style="/*width:220px;*//*height:220px;*/margin-top:35px;"></div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group"><label>Employee Name</label><input type="text" readonly="" class="form-control" name="empname"></div>
+                        <div class="form-group"><label>Department</label><input type="text" disabled="" class="form-control" name="department"></div>
+                        <div class="form-group"><label>Designation</label><input type="text" readonly="" class="form-control" name="designation"></div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="col" style="border:outset;border-radius:10px;background-color: white;">
+                <div style="margin-top:10px;">
+                    <h5>Payroll Profile<br></h5>
+                </div>
+                <hr>
+                <div class="form-group" style="margin-top:7px;"><label name="month">Select Month to generate payroll</label><select class="form-control"><option value="1" selected="">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div>
+                <div
+                    class="form-group" style="margin-top:7px;"><label name="payrollProfile">Select Payroll Profile</label><select class="form-control"><option value="12" selected="">ID 1</option><option value="13">ID 2</option><option value="14">ID 3</option></select></div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group"><label>Allowance</label><input type="text" readonly="" class="form-control" name="allowance1"></div>
+                </div>
+                <div class="col">
+                    <div class="form-group"><label>Amount</label><input type="text" readonly="" class="form-control" name="allAmount"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group"><label>Deduction</label><input type="text" readonly="" class="form-control" name="deduction1"></div>
+                </div>
+                <div class="col">
+                    <div class="form-group"><label>Amount</label><input type="text" readonly="" class="form-control" name="dedAmount"></div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+    </div>
+    <div class="container" style="margin-top:20px;">
+        <div class="row">
+            <div class="col-sm-12 col-md-6" style="border:outset;border-radius:10px;margin-right:25px;background-color: white;">
+                <div class="row" style="margin-top:10px;height:33px;">
+                    <div class="col">
+                        <div>
+                            <h5>Allowances</h5>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="d-flex justify-content-end"><button class="btn btn-primary form-group" type="button" style="background-color: #2374c3;">+ Add Allowance<br></button></div>
+                    </div>
+                </div>
+                <hr>
+                <div id="allowanceContainer">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group"><label>Allowance 1</label><select class="form-control"><option value="12" selected="">ID 1</option><option value="13">ID 2</option><option value="14">ID 3</option></select></div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group"><label>Title</label><input type="text" readonly="" class="form-control" name="allname1"></div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group"><label>Amount</label><input type="text" readonly="" class="form-control" name="allAmount"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group"><label>Allowance 2</label><select class="form-control"><option value="12" selected="">ID 1</option><option value="13">ID 2</option><option value="14">ID 3</option></select></div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group"><label>Title</label><input type="text" readonly="" class="form-control" name="allname2"></div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group"><label>Amount</label><input type="text" readonly="" class="form-control" name="allAmount"></div>
+                    </div>
+                </div>
+                </div>
+                <hr>
+                <div class="row d-flex justify-content-center" style="margin-bottom:1rem;">
+                    <div class="col-3"><label class="col-form-label">All Allowances</label></div>
+                    <div class="col-4"><input type="text" readonly="" class="form-control"></div>
+                </div>
+            </div>
+            <div class="col" style="border:outset;border-radius:10px;background-color: white;">
+                <div style="margin-top:10px;">
+                    <h5>Employee Attendance Log<br></h5>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group"><label>Present Days</label><input type="text" readonly="" class="form-control" name="allAmount"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group"><label>Absent Days</label><input type="text" readonly="" class="form-control" name="allAmount"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group"><label>Leave Days</label><input type="text" readonly="" class="form-control" name="allAmount">
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top:20px;">
+        <div class="row">
+            <div class="col-sm-12 col-md-6" style="border:outset;border-radius:10px;margin-right:25px;background-color: white;">
+                <div class="row" style="margin-top:10px;height:33px;">
+                    <div class="col">
+                        <div>
+                            <h5>Deductions</h5>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="d-flex justify-content-end"><button id="addAllowanceBtn" class="btn btn-primary form-group" type="button" style="background-color: #2374c3;">+ Add&nbsp;Deduction<br></button></div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group"><label>Deductions&nbsp;1</label><select class="form-control"><option value="12" selected="">ID 1</option><option value="13">ID 2</option><option value="14">ID 3</option></select></div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group"><label>Title</label><input type="text" readonly="" class="form-control" name="allname1"></div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group"><label>Amount</label><input type="text" readonly="" class="form-control" name="allAmount"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group"><label>Deduction 2</label><select class="form-control"><option value="12" selected="">ID 1</option><option value="13">ID 2</option><option value="14">ID 3</option></select></div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group"><label>Title</label><input type="text" readonly="" class="form-control" name="allname2"></div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group"><label>Amount</label><input type="text" readonly="" class="form-control" name="allAmount"></div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row d-flex justify-content-center" style="margin-bottom:1rem;">
+                    <div class="col-3"><label class="col-form-label">All Deductions</label></div>
+                    <div class="col-4"><input type="text" readonly="" class="form-control"></div>
+                </div>
+            </div>
+            <div class="col" style="border:outset;border-radius:10px;background-color: white;">
+                <div style="margin-top:10px;">
+                    <h5>Benefits<br></h5>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group"><label>Total Overtime Hours</label><input type="text" readonly="" class="form-control" name="allAmount"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group"><label>Bonus Amount</label><input type="text" class="form-control" name="bonus"></div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top:20px;">
+        <div class="row">
+            <div class="col" style="border:outset;border-radius:10px;background-color: white;">
+                <div style="margin-top:10px;">
+                    <h5>Payroll Breakdown and Summary<br></h5>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group"><label>Basic Salary</label><input type="text" readonly="" class="form-control" name="allAmount"></div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group"><label>Total Extras</label><input type="text" readonly="" class="form-control" name="allAmount"></div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group"><label>Total Substractions</label><input type="text" readonly="" class="form-control" name="allAmount"></div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group"><label>Gross Salary</label><input type="text" readonly="" class="form-control" name="allAmount"></div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group"><label>Net Salary</label><input type="text" readonly="" class="form-control" name="allAmount"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 content-right"><button class="btn btn-primary" type="submit" style="width:80px;background-color:#2374c3;">SAVE</button><button class="btn btn-light" type="reset" style="margin-right:10px;width:80px;color:#2374c3;">CANCEL</button></div>
+        </div>
+    </div>
+    <script>
+        function displayCurrentDate() {
+          // Get the current date
+          const now = new Date();
+    
+          // Format the date
+          const options = { year: 'numeric', month: 'long', day: 'numeric' };
+          const formattedDate = now.toLocaleDateString(undefined, options);
+    
+          // Display the date in the HTML element
+          document.getElementById('currentDate').innerText = formattedDate;
+        }
+    
+        // Call the function
+        displayCurrentDate();
+      </script>
+      <script>
+    document.getElementById("addAllowanceBtn").addEventListener("click", function () {
+        // Get the container for allowance rows
+        const container = document.getElementById("allowanceContainer");
+
+        // Get the number of existing allowance rows
+        const rowCount = container.getElementsByClassName("allowance-row").length + 1;
+
+        // Create a new row
+        const newRow = document.createElement("div");
+        newRow.classList.add("row", "allowance-row");
+        newRow.innerHTML = `
+            <div class="col">
+                <div class="form-group"><label>Allowance ${rowCount}</label>
+                    <select class="form-control">
+                        <option value="12" selected="">ID 1</option>
+                        <option value="13">ID 2</option>
+                        <option value="14">ID 3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group"><label>Title</label>
+                    <input type="text" readonly="" class="form-control" name="allname${rowCount}">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group"><label>Amount</label>
+                    <input type="text" readonly="" class="form-control" name="allAmount">
+                </div>
+            </div>
+        `;
+
+        // Append the new row to the container
+        container.appendChild(newRow);
+    });
+</script>
+
+    <script src="../Resources/js/jquery.min.js"></script>
+    <script src="../Resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../Resources/js/payrollGeneration.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+.card-body {
+  /*background-color:#ffffff;*/
+}
+
+.card {
+  /*margin:20px;*/
+  /*border-radius:10px;*/
+  /*box-shadow:0 4px 8px rgba(0, 0, 0, 0.1);*/
+}
+
+.card-header {
+  background-color:#f8f9fa;
+  font-size:1.25rem;
+  font-weight:bold;
+}
+
+.list-group-item {
+  font-size:1rem;
+  /*padding:15px;*/
+}
+
+.list-group-item i {
+  margin-right:10px;
+}
+
+.card-body {
+}
+

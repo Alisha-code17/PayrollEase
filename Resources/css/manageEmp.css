@@ -1,0 +1,8 @@
+img{border-radius:15px}
+
+.modal-dialog-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }

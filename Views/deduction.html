@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deduction</title>
+    <link rel="stylesheet" href="../Resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="../Resources/css/Profile-Edit-Form.css">
+    <link rel="stylesheet" href="../Resources/css/deduction.css">
+</head>
+
+<body>
+    <div class="container deduction-header">
+        <h4>Deductions</h4>
+        <h6>Adjustments &gt; Deductions<br></h6>
+    </div>
+    <div class="container profile profile-view" id="profile">
+        <form id="deduction-form" action="../Controllers/insert_deduction.php" method="POST">
+            <div class="form-row profile-row">
+                <div class="col-md-8">
+                    <!-- Title -->
+                    <div class="form-row deduction-field">
+                        <div class="col">
+                            <div class="form-group">
+                                <div class="form-row">
+                                    <div class="col-md-2"><label class="col-form-label">Title</label></div>
+                                    <div class="col"><input class="form-control" type="text" placeholder="Enter name of the Deduction" name="name" required></div>
+                                    <small id="titleError" style="color:red;"></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Description -->
+                    <div class="form-row deduction-field">
+                        <div class="col">
+                            <div class="form-group">
+                                <div class="form-row">
+                                    <div class="col-md-2"><label class="col-form-label">Description</label></div>
+                                    <div class="col"><textarea class="form-control" placeholder="Enter description of the above Deduction" name="description" required></textarea></div>
+                                    <small id="descriptionError" style="color:red;"></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Amount -->
+                    <div class="form-row deduction-amount">
+                        <div class="col-md-2 deduction-label"><label class="col-form-label">Amount</label></div>
+                        <div class="col"><input class="form-control" type="number" placeholder="Enter Amount" name="amount" required></div>
+                        <small id="amountError" style="color:red;"></small>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="form-row deduction-buttons">
+                        <div class="col-md-12 content-right">
+                            <button class="btn btn-primary form-btn save-btn" type="submit" id="save-btn">SAVE</button>
+                            <button class="btn btn-primary form-btn cancel-btn" type="reset">CANCEL</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="../Resources/js/jquery.min.js"></script>
+    <script src="../Resources/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+/* Body styling */
+.payroll-body {
+    font-family: Roboto, sans-serif;
+}
+
+/* Container styling */
+.top-margin-container {
+    margin-top: 90px;
+}
+
+.section-container {
+    margin-top: 20px;
+}
+
+/* Card styling */
+.info-card {
+    background-color: white;
+    border-radius: 10px;
+    margin-right: 25px;
+    border: groove;
+}
+
+.attendance-card, .payroll-profile-card, .breakdown-card {
+    background-color: white;
+    border: groove;
+    border-radius: 10px;
+}
+
+/* Section headers */
+.section-header {
+    margin-top: 10px;
+}
+
+/* Form elements */
+.form-row-spacing {
+    margin-top: 7px;
+}
+
+.form-group-spacing {
+    margin-top: 7px;
+}
+
+/* Avatar styling */
+.avatar-margin {
+    margin-top: 35px;
+    border-radius: 50%;
+}
+
+/* Info text styling */
+.info-text {
+    color: red;
+    font-size: small;
+}
+
+/* Required field indicator */
+.required-field {
+    color: red;
+}
+
+/* Error message styling */
+.error-message {
+    display: none;
+    color: red;
+}
+
+/* Allowance and deduction labels */
+.allowance-label, .deduction-label {
+    font-weight: 600;
+}
+
+.allowance-input {
+    margin-left: -80px;
+}
+
+.deduction-input {
+    margin-left: -80px;
+}
+
+/* Summary section */
+.summary-row {
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.total-label {
+    margin-left: 42px;
+}
+
+/* Button styling */
+.button-row {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.save-button {
+    width: 80px;
+    background-color: #2374c3;
+    margin-right: 20px;
+}
+
+.cancel-button {
+    margin-right: 10px;
+    width: 80px;
+    color: #2374c3;
+}

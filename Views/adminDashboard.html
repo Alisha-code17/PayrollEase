@@ -1,0 +1,459 @@
+<?php
+session_start();
+
+// Redirect to login page if the user is not authenticated
+if (!isset($_SESSION['username'])) {
+    header("Location: login.html");
+    exit;
+}
+
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adDashboard</title>
+    <link rel="stylesheet" href="..Resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="..Resources/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="..Resources/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="..Resources/css/SBWP-Search-Bar-With-Parameters.css">
+    <link rel="stylesheet" href="..Resources/css/sidebar.css">
+    <link rel="stylesheet" href="..Resources/css/sidebar.css">
+    <link rel="stylesheet" href="..Resources/css/styles.css">
+</head>
+
+<body style="color:rgba(33,37,41,0.67);margin-left:0px; overflow:auto;"><!--<div>Custom Code</div>-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <div class="row" id="container">
+        <div class="col-md-2" id="sidebar" style="padding-right:0px;padding-left:20px;width:200px;">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header" style="height:83px">
+                    <div class="row" style="margin-top:12px;margin-bottom:-5px;">
+                        <div class="col-md-2" >
+                    <img src="..Resources/img/logo-removebg-preview (1).png" style="width:90px;height:80px;margin-top:-20px;margin-left:-32px;">
+                            </div>
+                        <div class="col-md-4">
+                    <h3 style="margin-left:10px;margin-top:4px;"><!--<img src="..Resources/img/logo-removebg-preview (1).png" style="width:50px;height:50px;margin-top:-1px;">-->PayrollEase</h3>
+                    <strong>PE</strong>
+                            </div>
+                        </div>
+                </div>
+<div class="sidebar-content" id="sidebarContent">
+                <ul class="list-unstyled components">
+                    <!--<li class="active">
+                        <a href="#dashSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-dash"></i>Dashboard
+                        </a>
+                        <ul class="collapse list-unstyled" id="dashSubmenu">
+                            <li><a href="#">Analytics</a></li>
+                            <li><a href="#">Invoice</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="#empSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-emp"></i>Employee
+                        </a>
+                        <ul class="collapse list-unstyled" id="empSubmenu">
+                            <li><a href="#">Employee List</a></li>
+                            <li><a href="#">Manage Employee</a></li>
+                            <li><a href="#">Attendance</a></li>
+                        </ul>
+                    </li>-->
+                    <!--<li class="active">
+                        <a href="#depSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-dep"></i>Department
+                        </a>
+                        <ul class="collapse list-unstyled" id="depSubmenu">
+                            <li><a href="#">Designation</a></li>
+                            <li><a href="#">Manage Department</a></li>
+                        </ul>
+                    </li>-->
+                      <li>
+                        <a href="#dashSubmenu" data-toggle="collapse">
+                           
+                            <img src="..Resources/img/icons8-dashboard-layout-30 (3).png" style="width:25px;height:27px;margin-top:-1px;">
+                            <i class="glyphicon glyphicon-emp"></i>Dashboard
+                        </a>
+                        <ul class="collapse list-unstyled" id="dashSubmenu" style="margin-left:20px;">
+                            <li><a href="#">Analytics</a></li>
+                            <li><a href="#">Invoice</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#empSubmenu" data-toggle="collapse">
+                            <img src="..Resources/img/icons8-employees-30 (1).png" style="width:25px;height:35px;margin-top:-1px;">
+                            <i class="glyphicon glyphicon-emp"></i>Employee
+                        </a>
+                        <ul class="collapse list-unstyled" id="empSubmenu" style="margin-left:20px;">
+                            <li><a href="#">Employee List</a></li>
+                            <li><a href="#">Manage Employee</a></li>
+                        </ul>
+                    </li>
+                   <li>
+                        <!--<a href="#">
+                            <i class="glyphicon glyphicon-briefcase"></i>
+                            About
+                        </a>-->
+                       <a href="#depSubmenu" data-toggle="collapse">
+                           <img src="..Resources/img/icons8-department-30 (4).png" style="width:25px;height:29px;margin-top:-1px;">
+                            <i class="glyphicon glyphicon-dep"></i>Department
+                        </a>
+                        <ul class="collapse list-unstyled" id="depSubmenu" style="margin-left:20px;">
+                            <li><a href="#">Designation</a></li>
+                            <li><a href="#">Manage Department</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#levSubmenu" data-toggle="collapse">
+                            <img src="..Resources/img/icons8-leave-30 (1).png" style="width:25px;height:27px;margin-top:-1px;">
+                            <i class="glyphicon glyphicon-pay"></i>Leave
+                        </a>
+                        <ul class="collapse list-unstyled" id="levSubmenu" style="margin-left:20px;">
+                            <li><a href="#">Status Leaves</a></li>
+                            <li><a href="#">Set Leave Policies</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#paySubmenu" data-toggle="collapse">
+                            <img src="..Resources/img/icons8-money-transfer-30 (3).png" style="width:25px;height:25px;margin-top:-1px;">
+                            <i class="glyphicon glyphicon-pay"></i>Payroll
+                        </a>
+                        <ul class="collapse list-unstyled" id="paySubmenu" style="margin-left:20px;">
+                            <li><a href="#">Employee Salary</a></li>
+                            <li><a href="#">Payroll Items</a></li>
+                            <li><a role="presentation" href="javascript:void(0);" style="color:#3786d5;" 
+           onclick="loadPage('http://localhost/newPayrollEase/PayrollEase/Views/payslip.html')">Payslip</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#pgSubmenu" data-toggle="collapse">
+                            <img src="..Resources/img/icons8-documents-30.png" style="width:25px;height:27px;margin-top:-1px;">
+                            <i class="glyphicon glyphicon-pay"></i>Pages
+                        </a>
+                        <ul class="collapse list-unstyled" id="pgSubmenu" style="margin-left:20px;">
+                            <li><a href="#">Profile</a></li>
+                            <!--<li><a href="#">Payroll Items</a></li>
+                            <li><a href="#">Payslip</a></li>-->
+                        </ul>
+                    </li>
+                    <!--<li class="active">
+                        <a href="#pgSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-emp"></i>Pages
+                        </a>
+                        <ul class="collapse list-unstyled" id="pgSubmenu">
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">Manage Employee</a></li>
+                            <li><a href="#">Attendance</a></li>
+                        </ul>
+                    </li>
+                   <!-- <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-link"></i>
+                            Portfolio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-paperclip"></i>
+                            FAQ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-send"></i>
+                            Contact
+                        </a>
+                    </li>-->
+                </ul>
+                </div>
+            </nav>
+
+            <!-- Page Content Holder -->
+            
+        
+
+
+
+
+
+        <!-- jQuery CDN -->
+         </div>
+        <div class="col" id="content" style="padding:px;background-color:#f8f9fa;overflow:hidden;padding-top:35px;">
+            <div style="margin-left:20px;">
+                <div id="header" style="/*background-color:#e2e6ea;*/background-color:#3786D5;height:83px;position:absolute;top:35px;left:25px;transition:left 0.3s, width 0.3s;/*z-index:1000;*/margin-top:-35px;width:100%;margin-left:-10px;">
+                    <div class="row" style="background-color:#2374C3;height:82px;/*margin-top:20px;*/margin-left:-5px;">
+                        <div class="col-md-1"><button class="btn btn-primary d-flex justify-content-center" type="button" id="toggleSidebar" style="background-color:rgba(226,230,234,0);border:none;box-shadow:none;width:40px;height:40px;margin-left:0px;margin-top:20px;/*margin-bottom:-70px;*//*padding-top:5px;*//*padding-left:12px;*/"><img src="..Resources/img/icons8-menu-30 (3).png" style="width:40px;height:35px;"></button></div>
+                        <div
+                            class="col">
+                            <h4 style="color:white;margin-top:26px;font-family:Roboto, sans-serif;">Admin Control Hub<br></h4>
+                    </div>
+                    <div class="col"><div class="container">
+    <div class="row height text-start">
+        <div class="col-md-auto" style="padding-top:0px; margin-left:150px; margin-top:20px;">
+            <div class="search">
+                <i class="fa fa-search" style="margin-top:-8px; margin-bottom:-5px;color:#3786D5"></i>
+                <input
+                    type="text"
+                    id="searchInput"
+                    class="form-control"
+                    placeholder="Search"
+                    style="border-radius:10px; height:40px;"
+                />
+                <button
+                    id="searchButton"
+                    class="btn btn-primary"
+                    style="border-radius:10px; height:30px; width:60px; background-color:#3786D5;display: flex;
+    justify-content: center;font-size:12px"
+                >
+                    Search
+                </button>
+               <!-- <button
+                    id="prevButton"
+                    class="btn btn-secondary"
+                    style="border-radius:10px; height:30px; width:40px; background-color: #ddd; margin-left: 5px;"
+                >
+                    &lt;
+                </button>
+                <button
+                    id="nextButton"
+                    class="btn btn-secondary"
+                    style="border-radius:10px; height:30px; width:40px; background-color: #ddd; margin-left: 5px;"
+                >
+                    &gt;
+                </button>-->
+            </div>
+        </div>
+    </div>
+   <!-- <div class="row mt-3">
+        <div id="searchContent" style="padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
+            <!-- Add your searchable text here -->
+           <!-- This is an example paragraph. You can type any word in the search bar to find it in this content.
+        </div>
+    </div>-->
+    <div id="errorMessage" style="color: red; display: none; margin-top: 10px;">
+        No word found.
+    </div>
+</div>
+
+                        <div class="dropdown d-flex align-self-end swing animated" style="width:50px;height:50px;right:50px;top:10px;margin-top:10px;position:absolute;z-index:1;"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color:rgba(0,123,255,0);border-radius:50%;height:40px;width:40px;border:1px solid white;"><img src="..Resources/img/icons8-test-account-40 (1).png" style="margin-left:-17px;margin-bottom:0px;margin-top:-9px;"></button>
+                            <div
+                                class="dropdown-menu dropdown-menu-right" role="menu" style="height:210px;min-width:230px;/*max-height:none;*/position:absolute !important;z-index:1050 !important;font-family:Roboto, sans-serif;border:1px solid #3786d5;margin-left:0px;margin-right:40px;margin-top:13px;overflow:visible;/*transform:translateY(-10px);*//*transition:all 0.3s ease;*//*max-height:0;*//*transform:scaleY(0);*//*transition:transform 0.3s ease, opacity 0.3s ease;*//*opacity:0;*/"><a class="dropdown-item disabled d-flex justify-content-center align-items-center" role="presentation" href="#" style="background-color:#6FBFED;min-height:120px;"><img src="..Resources/img/icons8-test-account-60.png"><h5 style="color:rgb(255,255,255);margin-left:10px;">Administrator<br></h5></a>
+                                <a
+                                    class="dropdown-item" role="presentation" href="#" style="font-size:18px;"><img src="..Resources/img/icons8-account-20.png" style="margin-right:10px;">Profile<br></a><a class="dropdown-item" role="presentation" href="#" style="font-size:18px;" data-toggle="modal" data-target="#logoutModal"><img src="..Resources/img/icons8-login-20.png" style="margin-right:10px;">Logout</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="dashboard-content" style="display: block;font-family:Roboto, sans-serif;">
+            <div style="margin-top:90px;">
+                <h6 style="margin-top:30px;font-family:'Merriweather Sans', sans-serif;">Dashboard &gt; Analytics</h6>
+                <h4 style="margin-top:5px;font-family:Roboto, sans-serif;">Home</h4>
+            </div>
+            <div style="margin-top:20px;font-family:Roboto, sans-serif;">
+                <div class="row" style="margin-top:50px;">
+                    <div class="col-md-4">
+                        <div class="card" style="border-radius:15px;width:250px;border:1px solid #6fbfed;">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Payroll Expenses<br></h5>
+                                <div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6 class="text-muted mb-2" style="padding-top:10px;">$50,000<br></h6>
+                                        </div>
+                                        <div class="col"><img src="..Resources/img/icons8-paycheque-40.png" style="height:40px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" style="border-radius:15px;width:250px;border:1px solid #6fbfed;">
+                            <div class="card-body">
+                                <h5 class="card-title">Employee Count</h5>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="text-muted mb-2">100</h6>
+                                    </div>
+                                    <div class="col"><img src="..Resources/img/icons8-employees-40.png"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" style="background-image:url(&quot;..Resources/img/dashboard_card_background_249x118.jpg&quot;);padding-bottom:12px;border-radius:15px;width:250px;border:1px solid #6fbfed;overflow:visible;">
+                            <div class="card-body">
+                                <h5 class="card-title">Pending Invoices<br></h5>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="text-muted mb-2" style="color:black;">15</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="row" style="margin-top:50px;">
+                        <div class="col-md-4">
+                            <h5>Expenses Breakdown:<br></h5>
+                            <div><!--<div>Custom Code</div>-->
+<canvas id="pieChart" width="50" height="50"></canvas>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const ctxPie = document.getElementById('pieChart').getContext('2d');
+        const pieChart = new Chart(ctxPie, {
+            type: 'pie',
+            data: {
+                labels: ['Payroll', 'Benefits', 'Taxes'],
+                datasets: [{
+                    data: [50, 30, 20],
+                    backgroundColor: ['#6FBFED', '#3786D5 ', '#D2D2DC'],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+    });
+</script>
+
+</div>
+                        </div>
+                        <div class="col-md-6" style="margin-left:50px;">
+                            <h5>Earnings Over Time:<br></h5>
+                            <div><canvas id="lineChart" width="300" height="300"></canvas>
+<script>
+    const ctxLine = document.getElementById('lineChart').getContext('2d');
+    const lineChart = new Chart(ctxLine, {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June'], // X-axis labels
+            datasets: [{
+                label: 'Monthly Earnings',
+                data: [300, 400, 300, 500, 600, 700], // Y-axis data points
+                borderColor: '#007bff', // Line color
+                borderWidth: 2,
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: true } // Shows legend
+            }
+        }
+    });
+</script>
+</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top:30px;">
+                    <div class="col-md-7" style="margin-top:50px;">
+                        <h5>Total Earnings:<br></h5><canvas id="earningsBarChart" width="400" height="400"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Get the context of the canvas element
+    const ctx = document.getElementById('earningsBarChart').getContext('2d');
+
+    // Define actual data for the earnings
+    const totalEarnings1 = 5000;
+    const totalEarnings2 = 12000;
+    const totalEarnings3 = 9000;
+    const totalEarnings4 = 7000;
+    const totalEarnings5 = 15000;
+
+    // Create the bar chart for total earnings
+    const earningsBarChart = new Chart(ctx, {
+        type: 'bar',  // Specify chart type as bar
+        data: {
+            labels: ['Employee 1', 'Employee 2', 'Employee 3', 'Employee 4', 'Employee 5'], // Employee labels
+
+            datasets: [{
+                label: 'Total Earnings ($)',  // Label for the dataset
+                data: [totalEarnings1, totalEarnings2, totalEarnings3, totalEarnings4, totalEarnings5], // Earnings data
+                backgroundColor: ['#3786D5', '#D2D2DC', '#6FBFED', '#82A7BC', '#60A6EC'],  // Bar colors
+                borderColor: ['#E74C3C', '#3498DB', '#F1C40F', '#2ECC71', '#8E44AD'],  // Border colors
+                borderWidth: 1  // Border width around the bars
+            }]
+        },
+        options: {
+            responsive: true,  // Ensures the chart is responsive
+            scales: {
+                y: {
+                    beginAtZero: true  // Start the y-axis at 0
+                }
+            }
+        }
+    });
+</script>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!--leave-manag-emp-->
+	<div id="leave-management-emp" style="display:none;">
+    <div id="dynamic-content" style="margin-top:20px; background-color:#f8f9fa;">
+        <!-- Dynamically loaded content will go here -->
+    </div>
+	</div>
+    </div>
+    </div>
+    <div id="circle"></div>
+    <div class="modal fade" id="logoutModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#3786D5;">
+                    <h4 class="modal-title" style="color:white;">Logout Confirmation</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <p>Are you sure you want to log out?</p>
+                </div>
+                <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Yes</button><button class="btn btn-primary" type="button"  data-dismiss="modal">No</button></div>
+            </div>
+        </div>
+    </div>
+    <script src="..Resources/js/jquery.min.js"></script>
+    <script src="..Resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="..Resources/js/dashboard.js"></script>
+    <script src="..Resources/js/SBWP-Search-Bar-With-Parameters.js"></script>
+	<!--script for load leave-management-emp-->
+	<script>
+	function loadPage(url) {
+    // Hide the dashboard content
+    document.getElementById('dashboard-content').style.display = 'none';
+
+    // Show the leave-management-emp section
+    document.getElementById('leave-management-emp').style.display = 'block';
+
+    // Load content dynamically into dynamic-content
+    $.ajax({
+        url: url,
+        method: 'GET',
+        success: function(response) {
+            document.getElementById('dynamic-content').innerHTML = response;
+        },
+        error: function() {
+            document.getElementById('dynamic-content').innerHTML = '<p>Error loading the page. Please try again later.</p>';
+        }
+    });
+}
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayrollEase</title>
+    <link rel="icon" href="../Resources/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../Resources/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Adamina">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alike">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans">
+	<link rel="stylesheet" href="../Resources/css/login.css">
+    <link rel="stylesheet" href="../Resources/css/styles.css">
+    <link rel="stylesheet" href="../Resources/css/login_form_input.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body style="background-image: url('../Resources/img/login_background.jpg');">
+    <div>
+        <form id="loginForm" action="../Controllers/login.php" method="POST">
+            <div class="container" style="padding:49px;background-color:#fff;border-radius:15px;box-shadow:0 0 20px rgba(0, 0, 0, 0.2);margin-top:55px;margin-bottom:20px;height:600px;width:1090px;">
+                <div class="row">
+                    <div class="col-md-6 d-flex justify-content-center align-items-center align-content-center align-self-center" style="padding-top:67px;">
+                        <img src="../Resources/img/Efficient-Payroll-Management-with-Software-for-Payroll-ZM-removebg-preview.png" alt="Login Image" data-aos="fade-up" data-aos-duration="1400">
+                    </div>
+                    <div class="col-md-6" data-aos="fade-right" data-aos-duration="1400" style="margin-top:81px; ">
+                        <h1 style="text-align: center; color:#3786D5;">Login</h1>
+                        <p style="text-align: center; color:grey;">Please login to your account</p>
+					<div style="padding-left:130px; padding-bottom:50px;padding-top:50px;">
+                        <div class="form-group">
+                            <i class="fas fa-user icon"></i>
+                            <input type="text" id="username" name="username" placeholder=" " required>
+                            <label for="username">Username</label>
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-lock icon"></i>
+                            <input type="password" id="password" name="password" placeholder=" " required>
+                            <label for="password">Password</label>
+                        </div>
+					</div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <button class="btn btn-primary" type="submit">Login</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="../Resources/js/login.js"></script>
+	<script src="../Resources/js/jquery.min.js"></script>
+    <script src="../Resources/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../Resources/js/bs-animation.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+	<script>
+        // Initialize AOS
+        AOS.init({
+        });
+    </script>
+</body>
+
+</html>

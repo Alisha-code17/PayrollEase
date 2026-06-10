@@ -1,0 +1,19 @@
+.container {
+  border-radius:12px;
+}
+
+.table-responsive {
+  border-radius:7px;
+}
+
+.modal-dialog-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+}
+
+body.modal-open {
+  overflow: hidden;
+  padding-right: 0px !important;
+}

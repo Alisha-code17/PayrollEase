@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attendance</title>
+    <link rel="stylesheet" href="..Resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="..Resources/css/Data-Table.css">
+    <link rel="stylesheet" href="..Resources/css/Data-Table.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="..Resources/css/Pretty-Table.css">
+    <link rel="stylesheet" href="..Resources/css/Pretty-Table.css">
+    <link rel="stylesheet" href="..Resources/css/styles.css">
+    <link rel="stylesheet" href="..Resources/css/Table-with-search.css">
+    <link rel="stylesheet" href="..Resources/css/Table-with-search.css">
+</head>
+
+<body>
+    <div class="container" style="margin-top:20px;">
+        <h4>Attendance</h4>
+        <h6>Attendance &gt; Employee Attendance</h6>
+    </div>
+    <div class="container d-flex justify-content-end">
+        <div class="row">
+            <div class="col-md-2">
+                <p style="font-weight:bold;">Date:&nbsp;</p>
+            </div>
+            <div class="col-md-9" style="padding-left:-34px;">
+                <p id="currentDate"></p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width:150px;">ID</th>
+                        <th style="width:300px;">Employee</th>
+                        <th>Status</th>
+                        <th>&nbsp; &nbsp;Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <div class="row">
+                                <div class="col-3"><img src="..Resources/img/em7.jpeg" style="border-radius:50%;width:50px;"></div>
+                                <div class="col-6">
+                                    <h5 style="color:rgb(133,142,152);">Hassan Ali<br></h5>
+                                    <p style="font-size:13px;">IT Department<br></p>
+                                </div>
+                            </div>
+                        </td>
+                        <td><div class="justify-content-center">
+<select name="status" id="status" style="width:100px;padding-left:-35px;border: none;outline: none;appearance: none;"><img src="..Resources/img/icons8-full-stop-25.png">
+  <option value="present" selected >Present</option>
+  <option value="absent">Absent</option>
+</select>
+    </div></td>
+                        <td>
+                            <div><img src="..Resources/img/icons8-edit-23.png" style="margin-left:30px;"></div>
+                        </td>
+                    </tr>
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>
+    </div><script>
+    function displayCurrentDate() {
+      // Get the current date
+      const now = new Date();
+
+      // Format the date
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const formattedDate = now.toLocaleDateString(undefined, options);
+
+      // Display the date in the HTML element
+      document.getElementById('currentDate').innerText = formattedDate;
+    }
+
+    // Call the function
+    displayCurrentDate();
+  </script>
+    <script src="..Resources/js/jquery.min.js"></script>
+    <script src="..Resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+    <script src="..Resources/js/Table-with-search.js"></script>
+</body>
+
+</html>

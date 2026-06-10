@@ -1,0 +1,40 @@
+/* General page layout */
+.page-header {
+    margin-top: 90px;
+}
+
+.subtitle {
+    margin-bottom: 5rem;
+}
+
+/* Table container */
+.custom-table {
+    border-radius: 7px;
+}
+
+/* Table style */
+.custom-bordered {
+    border: 1px solid #007bff;
+    border-radius: 7px;
+}
+
+/* Table header */
+.table-header {
+    background-color: rgb(0, 115, 230);
+    color: white;
+}
+
+.table-header th.table-margin {
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+
+.col-action{
+    text-align: center;
+}
+
+/* Table body */
+.custom-bordered tbody {
+    background-color: white;
+}

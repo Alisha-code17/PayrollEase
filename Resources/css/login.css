@@ -1,0 +1,41 @@
+/* Background color for the page */
+body, .bg-light-blue {
+    /*background-color: #f8f9fa;*/
+	background-image: url('login_background.jpg');
+  background-size: cover; /* Adjusts the image to cover the entire background */
+  background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+  background-position: center; /* Centers the image */
+}
+
+/* Light blue gradient for left panel */
+.bg-gradient-blue {
+    background: #3786D5;
+}
+.login-container {
+    width: 80%;
+    max-width: 900px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.payroll-text {
+    font-size: 3rem; 
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    line-height: 1.2;
+    font-style: italic;
+}
+.login-text {
+    /*color: #6eb2e9;*/
+    font-size: 2rem;
+}
+.btn-login {
+    background-color: #3786D5;
+    border: none;
+    color: white; 
+    font-weight: bold; 
+}
+.btn-login:hover {
+    background-color: #709cee;
+}

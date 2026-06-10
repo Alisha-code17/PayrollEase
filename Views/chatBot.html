@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI ChatBot</title>
+    <link rel="stylesheet" href="../Resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="../Resources/css/Profile-Edit-Form.css">
+    <link rel="stylesheet" href="../Resources/css/allowance.css">
+    <style>
+        #chat-container {
+            margin-top: 20px;
+            max-width: 1000px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        #chat-box {
+            height: 370px;
+            overflow-y: auto;
+            border: 2px solid #c3dbf5;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            /* Add these new properties */
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 10px 15px;
+            border-radius: 25px;
+            border: 1px solid #007bff;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        #user-input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            outline: none;
+        }
+
+        .search-btn {
+            padding: 10px 20px;
+            border: 2px solid transparent;
+            background-color: #007bff;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .search-btn:focus {
+            background-color: #007bff;
+            border-color: #0056b3;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .search-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .user-message {
+            text-align: right;
+            margin: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .bot-message {
+            text-align: left;
+            margin: 10px;
+            color: #000000;
+        }
+
+        .follow-up-questions {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .follow-up-questions p {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .follow-up-questions ol {
+            padding-left: 20px;
+            margin: 0;
+        }
+        
+        .follow-up-questions li {
+            padding: 5px 0;
+        }
+        
+        .follow-up-questions li:hover {
+            text-decoration: underline;
+        }
+
+        .bot-message strong {
+            font-weight: bold;
+            color: inherit;
+        }
+        .bot-message em {
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" style="margin-top:90px;">
+        <h4>ChatBot</h4>
+        <h6>PE-Bot</h6>
+    </div>
+
+    <div class="container" id="chat-container">
+        <div id="chat-box"></div>
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Ask PE-Bot..." />
+            <button class="search-btn" id="send-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="../Resources/js/jquery.min.js"></script>
+    <script src="../Resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="..//Resources/js/chatBotEmp.js"></script>
+    
+</body>
+</html>

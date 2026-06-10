@@ -1,0 +1,45 @@
+/* Page header container */
+.header-container {
+    margin-top: 90px;
+    margin-bottom: 5rem;
+}
+
+/* Custom table wrapper */
+.custom-table {
+    border-radius: 7px;
+}
+.table {
+    border: 1px solid #007bff;
+    border-radius: 7px;
+}
+
+/* Table header */
+.table-header {
+    background-color: rgb(0, 115, 230);
+    color: white;
+}
+
+
+/* Table body */
+.table-body {
+    background-color: white;
+}
+
+/* Column widths and alignment */
+.col-id {
+    width: 150px;
+    text-align: center;
+}
+
+.col-type {
+    width: 300px;
+    
+}
+
+.col-amount {
+    text-align: center;
+}
+
+.col-action {
+    text-align: center;
+}

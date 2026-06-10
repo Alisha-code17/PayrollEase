@@ -1,0 +1,13 @@
+.container {
+  border-radius:12px;
+}
+
+.table-responsive {
+  border-radius:7px;
+}
+
+#deleteDesignationModal #errorMessage {
+  font-family: inherit !important;
+  font-size: 13px !important;
+  font-weight: normal !important;
+}

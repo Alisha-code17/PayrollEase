@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayrollEase</title>
+	<link rel="icon" href="../Resources/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../Resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Resources/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../Resources/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link rel="stylesheet" href="../Resources/css/salary-breakdown.css">
+    <link rel="stylesheet" href="../Resources/css/adminDashboard_sidebar.css">
+    <link rel="stylesheet" href="../Resources/css/employeeDashboard.css">
+</head>
+
+<body style="color:rgba(33,37,41,0.67);margin-left:0px; overflow:auto;"><!--<div>Custom Code</div>-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <div class="row" id="container">
+        <div class="col-md-2" id="sidebar" style="padding-right:0px;padding-left:20px;width:200px;">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header" style="height:83px">
+                    <div class="row" style="margin-top:12px;margin-bottom:-5px;">
+                        <div class="col-md-2" >
+                    <img src="../Resources/img/logo-removebg-preview (1).png" style="width:90px;height:80px;margin-top:-20px;margin-left:-32px;">
+                            </div>
+                        <div class="col-md-4">
+                    <h3 style="margin-left:10px;margin-top:4px;"><!--<img src="../Resources/img/logo-removebg-preview (1).png" style="width:50px;height:50px;margin-top:-1px;">-->PayrollEase</h3>
+                    <strong>PE</strong>
+                            </div>
+                        </div>
+                </div>
+<div class="sidebar-content" id="sidebarContent">
+                <ul class="list-unstyled components">
+                    <!--<li class="active">
+                        <a href="#dashSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-dash"></i>Dashboard
+                        </a>
+                        <ul class="collapse list-unstyled" id="dashSubmenu">
+                            <li><a href="#">Analytics</a></li>
+                            <li><a href="#">Invoice</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="#empSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-emp"></i>Employee
+                        </a>
+                        <ul class="collapse list-unstyled" id="empSubmenu">
+                            <li><a href="#">Employee List</a></li>
+                            <li><a href="#">Manage Employee</a></li>
+                            <li><a href="#">Attendance</a></li>
+                        </ul>
+                    </li>-->
+                    <!--<li class="active">
+                        <a href="#depSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-dep"></i>Department
+                        </a>
+                        <ul class="collapse list-unstyled" id="depSubmenu">
+                            <li><a href="#">Designation</a></li>
+                            <li><a href="#">Manage Department</a></li>
+                        </ul>
+                    </li>-->
+                      <li>
+                        <a href="#dashSubmenu" data-toggle="collapse">
+                           
+                            <img src="../Resources/img/icons8-dashboard-layout-30 (4).png" style="width:25px;height:27px;margin-top:-1px;">
+                            <i class="glyphicon glyphicon-emp"></i>Dashboard
+                        </a>
+                        <!--<ul class="collapse list-unstyled" id="dashSubmenu" style="margin-left:20px;">
+                            <li><a href="#">Analytics</a></li>
+                            <li><a href="#">Invoice</a></li>
+                        </ul>-->
+                    </li>
+                    <li>
+                        <a href="#empSubmenu" data-toggle="collapse">
+                            <img src="../Resources/img/icons8-test-account-30 (1).png" style="width:25px;height:35px;margin-top:-1px;">
+                            <i class="glyphicon glyphicon-emp"></i>Profile
+                        </a>
+                        <ul class="collapse list-unstyled" id="empSubmenu" style="margin-left:20px;">
+                            <li><a href="#">View Profile</a></li>
+                            <!--<li><a href="#">Manage Employee</a></li>-->
+                        </ul>
+                    </li>
+                   <li>
+                        <!--<a href="#">
+                            <i class="glyphicon glyphicon-briefcase"></i>
+                            About
+                        </a>-->
+                       <a href="#depSubmenu" data-toggle="collapse">
+                           <img src="../Resources/img/icons8-attendance-30 (3).png" style="width:25px;height:29px;margin-top:-1px;">
+                            <i class="glyphicon glyphicon-dep"></i>Attendence
+                        </a>
+                        <ul class="collapse list-unstyled" id="depSubmenu" style="margin-left:20px;">
+                            <li><a href="#">View Attendence</a></li>
+                            <li><a href="#">Attendence summary</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#levSubmenu" data-toggle="collapse">
+                            <img src="../Resources/img/icons8-leave-30 (2).png" style="width:25px;height:27px;margin-top:-1px;">
+                            <i class="glyphicon glyphicon-pay"></i>Leave
+                        </a>
+                        <ul class="collapse list-unstyled" id="levSubmenu" style="margin-left:20px;">
+                            <li><a  role="presentation" href="javascript:void(0);" style="color:#3786d5;" onclick="loadPage('http://localhost/dash-emp-not-with-dash/container.php')">Apply For Leave</a></li>
+                            <!--<li><a href="#">Set Leave Policies</a></li>-->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#paySubmenu" data-toggle="collapse">
+                            <img src="../Resources/img/icons8-money-transfer-30 (4).png" style="width:25px;height:27px;margin-top:-1px;">
+                            <i class="glyphicon glyphicon-pay"></i>Payroll
+                        </a>
+                        <ul class="collapse list-unstyled" id="paySubmenu" style="margin-left:20px;">
+                            <!--<li><a href="#">Employee Salary</a></li>-->
+                            <li><a href="#">Generate Payroll Report</a></li>
+                            <!--<li><a href="#">Payslip</a></li>-->
+                        </ul>
+                    </li>
+                   <!-- <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-link"></i>
+                            Portfolio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-paperclip"></i>
+                            FAQ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-send"></i>
+                            Contact
+                        </a>
+                    </li>-->
+                </ul>
+                </div>
+            </nav>
+
+            <!-- Page Content Holder -->
+            
+        
+
+
+
+
+
+        <!-- jQuery CDN -->
+         </div>
+        <div class="col" id="content" style="padding:px;background-color:#F3F1FA;overflow:hidden;padding-top:35px;">
+            <div style="margin-left:20px;">
+                <div id="header" style="/*background-color:#e2e6ea;*/background-color:#fff;height:83px;position:absolute;top:35px;left:25px;transition:left 0.3s, width 0.3s;/*z-index:1000;*/margin-top:-35px;width:100%;margin-left:-10px;">
+                    <div class="row" style="background-color:#fff;height:82px;/*margin-top:20px;*/margin-left:-5px;">
+                        <div class="col-md-1"><button class="btn btn-primary d-flex justify-content-center" type="button" id="toggleSidebar" style="background-color:rgba(226,230,234,0);border:none;box-shadow:none;width:40px;height:40px;margin-left:0px;margin-top:20px;/*margin-bottom:-70px;*//*padding-top:5px;*//*padding-left:12px;*/"><img src="../Resources/img/icons8-menu-25.png" style="width:40px;height:35px;"></button></div>
+                        <div
+                            class="col">
+                           <!-- <h4 style="color:white;margin-top:26px;font-family:Roboto, sans-serif;">Admin Control Hub<br></h4>-->
+                    </div>
+                    <div class="col"><div class="container">
+    <div class="row height text-start">
+        <div class="col-md-auto" style="padding-top:0px; margin-left:150px; margin-top:20px;">
+            <div class="search">
+                <i class="fa fa-search" style="margin-top:-8px; margin-bottom:-5px;color:#3786D5"></i>
+                <input
+                    type="text"
+                    id="searchInput"
+                    class="form-control"
+                    placeholder="Search"
+                    style="border-radius:10px; height:40px;"
+                />
+                <button
+                    id="searchButton"
+                    class="btn btn-primary"
+                    style="border-radius:10px; height:30px; width:60px; background-color:#3786D5;display: flex;
+    justify-content: center;font-size:12px"
+                >
+                    Search
+                </button>
+               <!-- <button
+                    id="prevButton"
+                    class="btn btn-secondary"
+                    style="border-radius:10px; height:30px; width:40px; background-color: #ddd; margin-left: 5px;"
+                >
+                    &lt;
+                </button>
+                <button
+                    id="nextButton"
+                    class="btn btn-secondary"
+                    style="border-radius:10px; height:30px; width:40px; background-color: #ddd; margin-left: 5px;"
+                >
+                    &gt;
+                </button>-->
+            </div>
+        </div>
+    </div>
+   <!-- <div class="row mt-3">
+        <div id="searchContent" style="padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
+            <!-- Add your searchable text here -->
+           <!-- This is an example paragraph. You can type any word in the search bar to find it in this content.
+        </div>
+    </div>-->
+    <div id="errorMessage" style="color: red; display: none; margin-top: 10px;">
+        No word found.
+    </div>
+</div>
+
+                        <div class="dropdown d-flex align-self-end swing animated" style="width:50px;height:50px;right:50px;top:10px;margin-top:10px;position:absolute;z-index:1;"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color:rgba(0,123,255,0);border-radius:50%;height:40px;width:40px;border:1px solid white;"><img src="../Resources/img/admin.png" style="margin-left:-17px;margin-bottom:0px;margin-top:-9px;height:40px;width:40px;border-radius:50%;"></button>
+                            <div
+                            class="dropdown-menu dropdown-menu-right" role="menu" style="height:210px;min-width:230px;/*max-height:none;*/position:absolute !important;z-index:1050 !important;font-family:Roboto, sans-serif;border:1px solid #3786d5;margin-left:0px;margin-right:40px;margin-top:13px;overflow:visible;/*transform:translateY(-10px);*//*transition:all 0.3s ease;*//*max-height:0;*//*transform:scaleY(0);*//*transition:transform 0.3s ease, opacity 0.3s ease;*//*opacity:0;*/"><a class="dropdown-item disabled d-flex justify-content-center align-items-center" role="presentation" href="#" style="background-color:#6FBFED;min-height:120px;"><img src="../Resources/img/admin.png" style="height:60px;weidth: 60px;border-radius:50%;"><h5 style="color:rgb(255,255,255);margin-left:10px;">Administrator<br></h5></a>
+                                <a
+                                    class="dropdown-item" role="presentation" href="#" style="font-size:18px;"><img src="../Resources/img/icons8-account-20.png" style="margin-right:10px;">Profile<br></a><a class="dropdown-item" role="presentation" href="#" style="font-size:18px;" data-toggle="modal" data-target="#logoutModal"><img src="../Resources/img/icons8-login-20.png" style="margin-right:10px;">Logout</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div id="dashboard-content" class="container" style="margin-right:0px;margin-left:0px;padding-left:0px;padding-right:0px;">
+        <div class="row" style="margin:9px;margin-left:-16px;">
+            <div class="col" style="width:828px; padding-top:50px;">
+                <h4 style="margin-top:9px;/*color:rgb(0,123,255);*/">Dashboard</h4>
+            </div>
+        </div>
+        <h5></h5>
+        <div class="row">
+            <div class="col">
+                <div class="card" style="width:500px;height:382px;">
+                    <div class="card-body" style="width:500px;padding-right:10px;">
+                        <div class="row">
+                            <div class="col" style="width:154px;height:63px;/*border:1px solid black;*/"><img src="../Resources/img/em7.jpeg" style="border-radius:50%;width:54px;"></div>
+                            <div class="col">
+                                <h5>Hassan Ali</h5>
+                                <p>IT-Software Engineer</p>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="row" style="height:45px;padding-bottom:0px;">
+                            <div class="col" style="padding-top:0px;">
+                                <div style="padding-bottom:0px;padding-top:7px;">
+                                    <h6 style="margin-bottom:-1px;padding-bottom:5px;">Phone Number</h6>
+                                    <p style="font-size:13px;">090078601</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col" style="padding-top:15px;">
+                                <div style="padding-top:9px;">
+                                    <h6 style="margin-bottom:-1px;padding-bottom:5px;">Email Address</h6>
+                                    <p style="margin-bottom:0px;font-size:13px;">123@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col" style="padding-top:12px;">
+                                <div style="padding-top:9px;">
+                                    <h6 style="margin-bottom:-1px;padding-bottom:5px;">Address</h6>
+                                    <p style="font-size:13px;">abc Samnabad,Lahore</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col" style="padding-top:5px;">
+                                <div style="padding-top:9px;">
+                                    <h6 style="margin-bottom:-1px;padding-bottom:6px;">Joined on</h6>
+                                    <p style="font-size:13px;">12-08-2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="width:500px;">
+                <div class="card" style="width:500px;">
+                    <div class="card-body">
+                        <div style="/*border:1px solid grey;*/">
+                            <h5>Leave Details</h5>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="col">
+                                <div style="padding-top:-9px;padding-bottom:9px;"><div style="width: 900px; height: 300px; padding-left:100px;"><canvas id="leaveAreaChart" width="400" height="400"></canvas>
+</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding-top:42px;padding-bottom:10px;">
+            <div class="col">
+                <div class="card" style="width:500px;">
+                    <div class="card-body" style="width:500px;height:362px;">
+                        <h4 class="card-title">Leave Details</h4>
+                        <div class="row" style="height:50px;padding-bottom:10px;padding-top:20px;">
+                            <div class="col">
+                                <div style="padding-bottom:0px;padding-top:9px;">
+                                    <h6 style="margin-bottom:-1px;padding-bottom:5px;">Total Leaves</h6>
+                                    <p style="font-size:14px;">10</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div style="padding-bottom:0px;padding-top:9px;">
+                                    <h6 style="margin-bottom:-1px;padding-bottom:5px;">Taken</h6>
+                                    <p style="font-size:14px;">5</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="height:50px;padding-bottom:10px;padding-top:20px;">
+                            <div class="col">
+                                <div style="padding-bottom:0px;padding-top:9px;">
+                                    <h6 style="margin-bottom:-1px;padding-bottom:5px;">Absent</h6>
+                                    <p style="font-size:14px;">0</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div style="padding-bottom:0px;padding-top:9px;">
+                                    <h6 style="margin-bottom:-1px;padding-bottom:5px;">Request</h6>
+                                    <p style="font-size:14px;">2</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="height:50px;padding-bottom:10px;padding-top:20px;">
+                            <div class="col">
+                                <div style="padding-bottom:0px;padding-top:9px;">
+                                    <h6 style="margin-bottom:-1px;padding-bottom:5px;">Worked days</h6>
+                                    <p style="font-size:14px;">25</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div style="padding-bottom:0px;padding-top:9px;">
+                                    <h6 style="margin-bottom:-1px;padding-bottom:5px;">Loss Pay</h6>
+                                    <p style="font-size:14px;">2</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding-top:70px;"><button class="btn btn-primary" type="button" style="margin-left:0px;margin-bottom:3px;background-color:#3786D5;width:471px;">+ Add Leave</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width:500px;">
+                    <div class="card-body"style="width:500px;"><div class="card-body" style="width:500px;">
+    <h5 class="card-title">Salary Breakdown</h5>
+    <ul class="list-group">
+        <li class="list-group-item"><i class="fas fa-money-bill-wave"></i> <strong>Basic Salary:</strong> $5000</li>
+        <li class="list-group-item"><i class="fas fa-gift"></i> <strong>Bonus:</strong> $1000</li>
+        <li class="list-group-item"><i class="fas fa-percent"></i> <strong>Tax:</strong> -$500</li>
+        <li class="list-group-item"><i class="fas fa-minus-circle"></i> <strong>Other Deductions:</strong> -$200</li>
+        <li class="list-group-item"><strong>Total Salary:</strong> $4300</li>
+    </ul>
+</div>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!--script for leave area chart chart-->
+	<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var ctx = document.getElementById('leaveAreaChart').getContext('2d');
+  var leaveAreaChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Sick Leave', 'Vacation', 'Casual Leave', 'Unpaid Leave'],
+      datasets: [{
+        label: 'Leave Distribution',
+        data: [15, 25, 10, 5],
+        backgroundColor: 'rgba(55, 134, 213, 0.2)',
+        borderColor: '#3786D5',
+        borderWidth: 2,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top'
+        }
+      }
+    }
+  });
+});
+</script>
+
+       
+    </div>
+	<!--leave-manag-admin-->
+	<div id="leave-management-admin" style="display:none;">
+    <div id="dynamic-content" style="margin-top:50px; background-color:#f8f9fa;">
+        <!-- Dynamically loaded content will go here -->
+    </div>
+	</div>
+    </div>
+    </div>
+    <div id="circle"></div>
+    <div class="modal fade" id="logoutModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#3786D5;">
+                    <h4 class="modal-title" style="color:white;">Logout Confirmation</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <p>Are you sure you want to log out?</p>
+                </div>
+                <div class="modal-footer"><a href="../Views/login.html" class="btn btn-primary">Yes</a><button class="btn btn-primary" type="button"  data-dismiss="modal">No</button></div>
+            </div>
+        </div>
+    </div>
+	<!--add leave model_code-->
+					<div class="modal fade" id="leaveModal" tabindex="-1" aria-labelledby="leaveModalLabel" aria-hidden="true" >
+						<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="border-radius:20px;">
+					   <div class="modal-content" style="border-radius:20px;">
+						 <!--<form method="POST" action="http://localhost/add_leave.php">-->
+						 <form method="POST" action="http://localhost/dash-emp-not-with-dash/add_leave.php">
+						 <div class="modal-header">
+						
+						   <h3 class="modal-title" id="editmodalLabel" style="color:rgb(0,115,230);">Add Leave</h3>
+							   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								   <span aria-hidden="true">&times;</span>
+							   </button>
+						 </div>
+						  <div class="modal-body" style="padding:19px" "border-radius:20px;">
+						   
+							   
+						   <div style="width:400px;"><label>Leave Type:</label>
+							   <div>
+								   <div class="form-check" id="option1" name="options" value="1">
+									   <input class="form-check-input" type="radio" id="option1" name="options" value="Sick">
+									   <label class="form-check-label" for="formCheck-1">Sick</label>
+								   </div>
+								   <div class="form-check" id="option2" name="options" value="2">
+									   <input class="form-check-input" type="radio" id="option2" name="options" value="Casual">
+									   <label class="form-check-label" for="formCheck-2">Casual</label>
+								   </div>
+								   <div class="form-check" id="option3" name="options" value="3">
+									   <input class="form-check-input" type="radio" id="option3" name="options" value="other" required>
+									   <label class="form-check-label" for="formCheck-3">Other</label>
+								   </div>
+							   </div>
+						   </div>
+								   <div style="margin-top:8px;">
+										   <label style="margin-bottom:5px;">Description:</label>
+										   <textarea class="form-control" name="description"></textarea>
+										 </div>
+										<div style="margin-top:8px;">
+											 <label style="margin-bottom:5px;" for="startDate">Start Date:</label>
+											 <input class="form-control" type="date" id="startDateAdd" name="startDate" onchange="calculateDaysAdd()" required="">
+										 </div>
+										<div style="margin-top:8px;">
+											 <label style="margin-bottom:5px;" for="endDate">End Date:</label>
+											 <input class="form-control" type="date" id="endDateAdd" name="endDate" onchange="calculateDaysAdd()" required="">
+										</div>
+										<div style="margin-top:8px;">
+											<label style="margin-bottom:5px;" for="totalDays">Total Days:</label>
+											<input class="form-control" type="text" readonly="" id="totalDaysAdd" name="totalDays" style="color:rgb(73,80,87);background-color:rgb(255,255,255);">
+										</div>
+										<div class="container d-flex justify-content-center align-items-center" style="margin-top:8px;">
+											<button 
+        										class="btn btn-primary" 
+        										type="submit" 
+        										style="transition: all 0.3s ease;" 
+        										onmouseover="this.style.color='#3786D5'; this.style.backgroundColor='white';" 
+        										onmouseout="this.style.color='white'; this.style.backgroundColor='#007bff';">
+        										Submit
+    										</button>
+										</div>
+												   
+									 </div>
+								</form>
+							</div>
+							</div>
+					</div>
+							   
+	<!--script for add leave-->
+		<script>
+			function calculateDaysAdd() {
+	const startDate = document.getElementById("startDateAdd").value;
+	const endDate = document.getElementById("endDateAdd").value;
+
+	if (startDate && endDate) {
+	const start = new Date(startDate);
+	const end = new Date(endDate);
+
+	if (end >= start) {
+		const timeDifference = end - start;
+		const totalDays = Math.ceil(timeDifference / (1000 * 3600 * 24)) + 1;
+		document.getElementById("totalDaysAdd").value = totalDays;
+	} else {
+		document.getElementById("totalDaysAdd").value = "Invalid Dates";
+	}
+	} else {
+	document.getElementById("totalDaysAdd").value = "";
+	}
+	}
+
+	document.getElementById("startDateAdd").addEventListener("change", calculateDaysAdd);
+	document.getElementById("endDateAdd").addEventListener("change", calculateDaysAdd);
+	</script>
+					<!-- Edit Leave Modal -->
+<div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="editmodalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="border-radius:20px;">
+        <div class="modal-content" style="border-radius:20px;">
+            <form method="POST" action="http://localhost/dash-emp-not-with-dash/edit_leave.php">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="editmodalLabel" style="color:rgb(0,115,230);">Edit Leave</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <input type="hidden" id="leave_id" name="leave_id">
+                </div>
+                <div class="modal-body" style="padding:19px; border-radius:20px;">
+                    <!-- Leave Type -->
+                    <div style="width:400px;">
+                        <label>Leave Type:</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="sick" name="leave_type" value="Sick">
+                            <label class="form-check-label" for="sick">Sick</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="casual" name="leave_type" value="Casual">
+                            <label class="form-check-label" for="casual">Casual</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="other" name="leave_type" value="Other">
+                            <label class="form-check-label" for="other">Other</label>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div style="margin-top:8px;">
+                        <label style="margin-bottom:5px;">Description:</label>
+                        <textarea class="form-control" id="description" name="description"></textarea>
+                    </div>
+
+                    <!-- Start Date -->
+                    <div style="margin-top:8px;">
+                        <label style="margin-bottom:5px;" for="startDate">Start Date:</label>
+                        <input class="form-control" type="date" id="startDate" name="start_date" onchange="calculateDays()" required>
+                    </div>
+
+                    <!-- End Date -->
+                    <div style="margin-top:8px;">
+                        <label style="margin-bottom:5px;" for="endDate">End Date:</label>
+                        <input class="form-control" type="date" id="endDate" name="end_date" onchange="calculateDays()" required>
+                    </div>
+
+                    <!-- Total Days -->
+                    <div style="margin-top:8px;">
+                        <label style="margin-bottom:5px;" for="totalDays">Total Days:</label>
+                        <input class="form-control" type="text" id="totalDays" name="total_days" readonly style="color:rgb(73,80,87);background-color:rgb(255,255,255);">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="container d-flex justify-content-center align-items-center" style="margin-top:8px;">
+                        <button class="btn btn-primary" type="submit" style="background-color: #3786D5; color: white; border-radius: 5px; transition: all 0.3s ease;" onmouseover="this.style.color='#3786D5'; this.style.backgroundColor='white';" onmouseout="this.style.color='white'; this.style.backgroundColor='#3786D5';">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--script to display pre filled model at add leavwe-->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const editButtons = document.querySelectorAll('[data-target="#editmodal"]');
+
+    editButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Fetch the data-* attributes from the clicked button
+            const leaveId = this.getAttribute('data-id');
+            const leaveType = this.getAttribute('data-leave-type');
+            const startDate = this.getAttribute('data-start-date');
+            const endDate = this.getAttribute('data-end-date');
+            const totalDays = this.getAttribute('data-total-days');
+			const description = this.getAttribute('data-description'); // Get description data
+
+            // Populate the modal form fields with the fetched data
+            document.getElementById('leave_id').value = leaveId;
+            document.getElementById('startDate').value = startDate;
+            document.getElementById('endDate').value = endDate;
+            document.getElementById('totalDays').value = totalDays;
+			document.getElementById('description').value = description; // Set description in the modal
+
+            // Set the correct radio button for the leave type
+            document.getElementById('sick').checked = leaveType === 'Sick';
+            document.getElementById('casual').checked = leaveType === 'Casual';
+            document.getElementById('other').checked = leaveType === 'Other';
+        });
+    });
+});
+
+			
+	</script>
+			<!--script for handle form submission using ajax-->
+		<script>
+					document.addEventListener('DOMContentLoaded', function () {
+    const editForm = document.querySelector('#editmodal form');
+    
+    if (editForm) {
+        editForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent default form submission
+            
+            const formData = new FormData(editForm);
+
+            // Send AJAX request to PHP (edit_leave.php)
+            fetch('edit_leave.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json()) // Expecting JSON response
+            .then(data => {
+                if (data.status === 'success') {
+                    // Find the table row based on the leave_id
+                    const row = document.querySelector(`tr[data-id="${data.data.leave_id}"]`);
+                    if (row) {
+                        // Update the table row with new data
+                        row.querySelector('.leave-type').innerText = data.data.leave_type;
+                        row.querySelector('.description').innerText = data.data.description;
+                        row.querySelector('.start-date').innerText = data.data.start_date;
+                        row.querySelector('.end-date').innerText = data.data.end_date;
+                        row.querySelector('.total-days').innerText = data.data.total_days;
+                    }
+
+                    
+                    
+                    // Close the modal (if you are using Bootstrap for modal)
+                    $('#editmodal').modal('hide');
+                } else {
+                    alert(data.message); // Show error message if any
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    }
+});
+
+			
+				</script>
+				<!--script for edit leave-->
+	  <script>
+        function calculateDays() {
+            const startDate = document.getElementById("startDate").value;
+            const endDate = document.getElementById("endDate").value;
+
+            if (startDate && endDate) {
+                const start = new Date(startDate);
+                const end = new Date(endDate);
+
+                if (end >= start) {
+                    const timeDifference = end - start;
+                    const totalDays = timeDifference / (1000 * 3600 * 24);
+                    document.getElementById("totalDays").value = totalDays;
+                } else {
+                    document.getElementById("totalDays").value = "Invalid Dates";
+                }
+            } else {
+                document.getElementById("totalDays").value = "";
+            }
+        }
+    </script>
+	<!--delete modal--->
+				<div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="deletemodalLabel" aria-hidden="true">
+					  <div class="modal-dialog" role="document">
+						<div class="modal-content" style="border-radius:20px;">
+						<form method="POST" action="http://localhost/dash-emp-not-with-dash/delete_leave.php">
+						  <div class="modal-header">
+							<h3 class="modal-title" id="deletemodalLabel" style="color:rgb(0,115,230);">Delete Leave</h3>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							  <span aria-hidden="true">&times;</span>
+							</button>
+						  </div>
+						  <div class="modal-body" style="padding:19px">
+							<p>Are you sure want to delete</p>
+						  
+							<div style="display: flex; justify-content: center; gap: 30px;margin-top:4px;margin-bottom:5px;">
+								<button 
+									type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+									style="border-radius:5px; background-color:#3786D5; margin-left:0px; margin-bottom:3px; color:white; border: 3px solid #3786D5; padding:10px; transition: all 0.3s ease;" 
+									onmouseover="this.style.color='#3786D5'; this.style.backgroundColor='white';" 
+									onmouseout="this.style.color='white'; this.style.backgroundColor='#3786D5';">
+										Cancel
+								</button>
+
+								<button 
+   									type="button" 
+    								class="btn btn-primary delete-confirm-btn" 
+    								style="border-radius:5px; background-color:#3786D5; margin-left:0px; margin-bottom:3px; color:white; border: 3px solid #3786D5; padding:10px; transition: all 0.3s ease;" 
+   									onmouseover="this.style.color='#3786D5'; this.style.backgroundColor='white';" 
+    								onmouseout="this.style.color='white'; this.style.backgroundColor='#3786D5';">
+    								Delete  
+								</button>
+
+
+							</div>
+						 </div>
+						  
+						</form> 
+						</div>
+					  </div>
+					</div>
+					<!-- delete button with confirmatio-->
+					<script src="../Resources/js/jquery.min.js"></script>
+		<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const tableDeleteButtons = document.querySelectorAll(".open-delete-modal"); // Buttons to open modal
+        const modalDeleteButton = document.querySelector(".delete-confirm-btn"); // Modal's delete button
+        const cancelButton = document.querySelector(".cancel-btn"); // Modal's cancel button
+        const modal = document.querySelector("#deletemodal"); // Modal element
+
+        let currentLeaveId = null; // Store the ID of the record to delete
+
+        // Open the modal and set the leave ID
+        tableDeleteButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                currentLeaveId = this.getAttribute("data-id"); // Get record ID
+                modal.style.display = "block"; // Show the modal
+            });
+        });
+
+        // Delete record when the modal's delete button is clicked
+        modalDeleteButton.addEventListener("click", function () {
+            if (currentLeaveId) {
+                // Redirect to the server-side script for deletion
+                window.location.href = `dash-emp-not-with-dash/delete_leave.php?leave_id=${currentLeaveId}`;
+            }
+        });
+
+        // Close the modal when cancel button is clicked
+        cancelButton.addEventListener("click", function () {
+            modal.style.display = "none"; // Hide the modal
+        });
+    });
+</script>
+		<script>
+    $('#editmodal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget); // Button that triggered the modal
+    var leave_id = button.data('id'); // Extract leave_id from data-id attribute
+    var leave_type = button.data('leave-type'); // Extract leave_type from data-leave-type
+    var start_date = button.data('start-date'); // Extract start_date from data-start-date
+    var end_date = button.data('end-date'); // Extract end_date from data-end-date
+    var total_days = button.data('total-days'); // Extract total_days from data-total-days
+    var description = button.data('description'); // Extract description from data-description
+
+    // Update the modal's input fields with the values from the button
+    var modal = $(this);
+    modal.find('#leave_id').val(leave_id); // Set leave_id in the hidden field
+    modal.find('input[name="options"][value="' + leave_type + '"]').prop('checked', true); // Set leave type radio button
+    modal.find('#startDate').val(start_date); // Set start_date
+    modal.find('#endDate').val(end_date); // Set end_date
+    modal.find('#totalDays').val(total_days); // Set total_days (if needed)
+    modal.find('#description').val(description); // Set description (if needed)
+});
+
+</script>
+
+    
+    <script src="../Resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../Resources/js/dashboard.js"></script>
+    
+	<!--script for load leave-management-emp-->
+	<script>
+	function loadPage(url) {
+    // Hide the dashboard content
+    document.getElementById('dashboard-content').style.display = 'none';
+
+    // Show the leave-management-emp section
+    document.getElementById('leave-management-admin').style.display = 'block';
+
+    // Load content dynamically into dynamic-content
+    $.ajax({
+        url: url,
+        method: 'GET',
+        success: function(response) {
+            document.getElementById('dynamic-content').innerHTML = response;
+        },
+        error: function() {
+            document.getElementById('dynamic-content').innerHTML = '<p>Error loading the page. Please try again later.</p>';
+        }
+    });
+}
+
+	</script>
+</body>
+
+</html>

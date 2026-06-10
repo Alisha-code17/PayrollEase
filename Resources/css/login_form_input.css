@@ -1,0 +1,60 @@
+.form-group {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .form-group input {
+            
+            border: none;
+            border-bottom: 1px solid #007bff;
+            outline: none;
+            padding: 5px 0;
+             padding-left: 40px; 
+            background: transparent;
+			
+        }
+
+        .form-group input:focus,
+        .form-group input:hover {
+            border-bottom: 2px solid #007bff;
+        }
+
+        .form-group i {
+            position: absolute;
+            top: 8px;
+            left: 0;
+            color: #007bff;
+            font-size: 20px;
+            pointer-events: none;
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 10px;
+            left: 30px;
+            color: #aaa;
+            font-size: 16px;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:hover + label,
+        .form-group input:focus + label,
+        .form-group input:not(:placeholder-shown) + label {
+            top: -20px;
+            font-size: 14px;
+            color: #007bff;
+        }
+
+        .form-group input:hover {
+            border-bottom: 2px solid #007bff;
+        }
+
+        .form-group input:focus:hover {
+            border-bottom: 2px solid #0056b3;
+        }
+
+        .btn-primary {
+            width: 183px;
+            padding: 10px 0;
+        }

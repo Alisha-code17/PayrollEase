@@ -1,0 +1,32 @@
+
+
+/* ====== NEW CSS FROM INLINE ====== */
+.deduction-header {
+  margin-top:90px;
+}
+
+.deduction-field {
+  margin-bottom:25px;
+}
+
+.deduction-amount {
+  margin-bottom:16px;
+}
+
+.deduction-label {
+  padding-right:5px;
+}
+
+.deduction-buttons {
+  margin-top:50px;
+}
+
+/* Buttons styling */
+.save-btn {
+  margin-right:0px !important; /* matches original inline */
+}
+
+.cancel-btn {
+  background-color:rgba(220,53,69,0);
+  color:rgb(0,123,255);
+}

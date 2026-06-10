@@ -1,0 +1,25 @@
+/* Custom Styles for Attendance Table Header */
+
+.leave-thead tr {
+    background-color: #3786D5 !important;
+    color: white !important;
+}
+
+.leave-thead th {
+    padding: 10px;
+    width: 127px;
+    text-align: center;
+    vertical-align: middle;
+    border-color: #007bff;
+}
+
+/* First column width (checkbox column) */
+.leave-thead th:first-child {
+    width: 35px;
+}
+
+/* Optional: Checkbox size */
+#mainCheckbox {
+    width: 21px;
+    height: 15px;
+}

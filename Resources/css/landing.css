@@ -1,0 +1,61 @@
+/* Typewriter effect */
+    @keyframes typewriter {
+        from { width: 0; }
+        to { width: 45%; }
+    }
+
+    @keyframes blink {
+        50% { border-color: transparent; }
+    }
+
+    h1 {
+        margin-top: 30px;
+        margin-left: 95px;
+        font-weight: bold;
+        font-style: italic;
+        overflow: hidden; /* Ensures content is hidden */
+        border-right: 2px solid white; /* Cursor effect */
+        white-space: nowrap; /* Prevents text from wrapping */
+        width: 0; /* Start with zero width */
+        animation: 
+            typewriter 1s steps(20, end) 1s forwards, /* Typing animation */
+            blink 0.4s step-end 2s; /* Cursor blink animation during typing */
+    }
+
+    /* Remove the cursor after typing */
+    h1.finished {
+        border-right: none; /* Remove the cursor after typing */
+    }
+    /* animation on pg*/
+    @keyframes zoomOut {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    .zoom-out {
+      font-weight: bold;
+      margin-top: 30px;
+      animation: zoomOut 2s ease-out;
+      animation-fill-mode: forwards;
+    }
+	/* login_page*/
+	 .fade-out {
+      animation: fadeOut 0.25s forwards; /* Apply animation */
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      to {
+        opacity: 0;
+        transform: translateY(-20px); /* Move up */
+      }
+    }

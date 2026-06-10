@@ -1,0 +1,208 @@
+header.full-width {
+  left:0;
+  width:100%;
+}
+
+.btn.btn-primary.dropdown-toggle::after {
+  display:none;
+}
+
+.dropdown-menu.dropdown-menu-left {
+  position:static !important;
+  display:block;
+  display:none;
+  width:auto;
+  /*top:100%;*/
+  /*transform:translateY(0);*/
+}
+
+.dropdown-menu.dropdown-menu-left.show {
+  display:block !important;
+}
+
+.btn.btn-primary.dropdown-toggle {
+  margin:0;
+  padding:0.5rem 1rem;
+}
+
+.dropdown.flex-grow-1.flex-shrink-1 {
+  position:relative;
+  display:inline-block;
+}
+
+.dropdown-menu.dropdown-menu-left {
+  position:static;
+  display:none;
+  margin:0;
+  margin-top:0px;
+}
+
+.custom-sidebar {
+  width:20%;
+  max-width:300px;
+  min-width:200px;
+  height:100vh;
+  overflow-y:auto;
+  background-color:#343a40;
+  color:white;
+  position:sticky;
+  top:0;
+}
+
+.col-md-3 sidebar {
+  /*background-color:#343a40;*/
+  /*color:white;*/
+}
+
+.dropdown-menu {
+  position:static !important;
+}
+.my-custom-dropdown {
+    position: absolute !important;  /* Force position absolute */
+    top: 0px !important;           /* Apply your value */
+    left: 0px !important;           /* Apply your value */
+    transform: translate3d(-5px, 38px, 0px) !important;     /* Remove default translate3d */
+    will-change: auto !important;   /* Optional: Reset will-change */
+                   /* Ensure visibility */
+}
+.dropdown-menu.custom_dropdown_payslip {
+    position: absolute !important;
+}
+
+
+
+.btn.btn-primary.dropdown-toggle {
+  box-shadow:none;
+}
+
+.search {
+  position:relative;
+  box-shadow:0 0 40px rgba(51, 51, 51, 0.1);
+  margin:left;
+}
+
+.search input {
+  height:50px;
+  text-indent:25px;
+  border:2px solid #d6d4d4;
+}
+
+.search input:focus {
+  box-shadow:none;
+  border:2px solid blue;
+}
+
+.search .fa-search {
+  position:absolute;
+  top:20px;
+  left:16px;
+}
+
+.search button {
+  position:absolute;
+  top:5px;
+  right:5px;
+  height:40px;
+}
+
+#sidebar {
+  width:140px;
+  position:fixed;
+  top:0;
+  left:0;
+  height:100vh;
+  /*background-color:#f8f9fa;*/
+  padding-top:20px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  box-sizing:border-box;
+  transition:transform 0.3s ease;
+  transform:translateX(0);
+  z-index:10;
+}
+
+#sidebar.hidden {
+  transform:translateX(-100%);
+}
+
+#content {
+  transition:margin-left 0.3s ease, width 0.3s ease;
+  margin-left:250px;
+  width:calc(100% - 140px);
+  /*padding:15px;*/
+  box-sizing:border-box;
+  position:relative;
+  z-index:1;
+  /*margin-right:130px;*/
+  overflow-y:auto;
+}
+
+#sidebar.hidden ~ #content {
+  /*margin-left:0;*/
+  /*width:100%;*/
+}
+
+#content.full-width {
+  margin-left:0;
+  /*width:100%;*/
+}
+
+#toggleSidebar {
+  /*position:fixed;*/
+  /*top:15px;*/
+  /*left:15px;*/
+  z-index:1100;
+  background:#f8f9fa;
+  border:none;
+  cursor:pointer;
+  padding:5px 10px;
+  border-radius:5px;
+  transition:backgroung 0.3s ease;
+}
+
+#toggleSidebar:hover {
+  background:#eaeaea;
+}
+
+#container {
+  display:flex;
+  height:auto;
+  overflow:hidden;
+}
+
+#circle {
+  /*width:50px;*/
+  /*height:50px;*/
+  /*border-radius:50%;*/
+  /*background:rgba(0, 123,255, 0.5);*/
+  /*position:absolute;*/
+  /*pointer-events:none;*/
+  /*transform:translate(-50%, -50);*/
+  /*transition:transform 0.1s ease;*/
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    width:140px;
+  }
+}
+
+@media (max-width: 768px) {
+  #content {
+    margin-left:140px;
+  }
+}
+
+@media (max-width: 768px) {
+  #content.full-width {
+    margin-left:0;
+  }
+}
+
+/* year drop down on payslip.html defned here */
+#year_Button:disabled {
+  background-color: #e9ecef;
+  color: #667480;
+  border-color: #ced4da;
+  cursor: not-allowed;
+}
